@@ -1,7 +1,91 @@
-html {
-  max-width: 720px;
+.card {
+  color: rgb(106, 61, 148);
 }
 
-body {
-  background: #fff;
+.card > p {
+  color: green;
+  -webkit-text-fill-color: red;
+  -webkit-text-stroke: 1px rgb(88, 88, 255);
+}
+
+/* p:focus,
+p:active,
+p:hover {
+  -webkit-text-fill-color: rgb(255, 208, 0);
+  -webkit-text-stroke: 1px rgb(88, 88, 255);
+
+  direction: rtl;
+} */
+
+/* #test {
+  color: initial;
+  -webkit-text-fill-color: initial;
+  -webkit-text-stroke: initial;
+} */
+
+/* #test {
+  color: inherit;
+  -webkit-text-fill-color: inherit;
+  -webkit-text-stroke: inherit;
+} */
+
+#test {
+  color: unset;
+  -webkit-text-fill-color: unset;
+  -webkit-text-stroke: unset;
+
+  letter-spacing: 25px;
+
+  /* writing-mode: vertical-rl; */
+  /* writing-mode: vertical-lr; */
+
+  /* |||||||||||||||||використовувати для тегів контейнерів div/p/h1/...ті що переносять на новий рядок|||||||||||||||||||||||||||| */
+  /* text-align: right; */
+  /* text-align: left; */
+  text-align: center;
+  /* |||||||||||||||||використовувати для тегів контейнерів div/p/h1/...ті що переносять на новий рядок|||||||||||||||||||||||||||| */
+}
+
+pre {
+  tab-size: 15;
+}
+
+span {
+  text-decoration: underline overline dotted red;
+  /* text-decoration: line-through blue; */
+  /* text-decoration-color: darkblue; */
+  letter-spacing: 3px;
+}
+
+.test1 {
+  font-weight: lighter;
+}
+
+* {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 16px;
+  font-display: swap;
+}
+
+.block {
+  display: block;
+  background: rgb(136, 136, 136);
+  /* margin: 15px;
+  margin: 25%; */
+  /* margin: auto; */
+  /* margin-bottom: 20px; */
+  /* margin-right: 50px; */
+
+  /* зовнішні відступи */
+
+  /* margin: auto; */
+  /* auto дає можливість відцентрувати елемент\це прац. тільки горизонтально */
+
+  /* width: min-content; */
+  /* width: fit-content; */
+  width: max-content;
+
+  /* height: auto; */
+  min-height: 100px;
+  max-height: 150px;
 }

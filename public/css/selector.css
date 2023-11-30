@@ -1,0 +1,288 @@
+#test:target {
+  color: rgb(255, 253, 154);
+}
+
+.link_A:link {
+  color: red;
+}
+
+.link_A:hover {
+  color: green;
+}
+
+.card:hover {
+  background: rgb(55, 0, 128);
+}
+
+.link_A:active {
+  color: rgb(145, 31, 84);
+}
+
+.card:active {
+  background-color: rgb(59, 26, 148);
+}
+
+input {
+  background-color: gray;
+}
+
+input:focus {
+  background-color: rgb(150, 150, 150);
+}
+
+.card:focus-within {
+  background: red;
+}
+
+.card:lang(en) > span::after {
+  content: '(en)';
+}
+
+button {
+  background-color: green;
+}
+
+button:enabled {
+  background-color: greenyellow;
+}
+
+.inp:read-write {
+  background-color: blue;
+}
+
+.inp:read-only {
+  background-color: rgb(255, 0, 55);
+}
+
+input[type='checkbox']:checked ~ span {
+  background: red;
+}
+
+.valid:valid {
+  background: aquamarine;
+}
+
+.valid:invalid {
+  background: rgb(6, 94, 97);
+}
+
+.valid:optional {
+  background: rgb(76, 172, 31);
+}
+
+.valid:optional {
+  background: rgb(207, 101, 30);
+}
+
+.number:focus {
+  background: gray;
+}
+
+.number:out-of-range {
+  background: red;
+}
+
+.number:in-range {
+  background: rgb(72, 255, 0);
+}
+/* .card-dark {
+  background: rgb(107, 107, 107);
+}
+
+.input-dark {
+  background: rgb(83, 83, 83);
+}
+
+.input-dark[required] {
+  background: rgb(180, 167, 151);
+}
+
+.input-dark[type='number'] {
+  background: red;
+}
+
+.small-img[alt~='small'] {
+  height: 500px;
+}
+
+a[rel~='external'] {
+  color: rgb(255, 0, 242);
+}
+
+button[class|='btn'] {
+  background: rgb(134, 148, 120);
+} */
+
+/* a[class^='btn'] {
+  background: rgb(152, 255, 48);
+} */
+
+/* a[class*='btn'] {
+  background: rgb(48, 255, 210);
+}
+
+a[class$='big'] {
+  background: rgb(49, 131, 199);
+}
+
+.btn::first-letter {
+  color: chocolate;
+}
+
+.big-text::first-line {
+  color: blueviolet;
+}
+
+.input-dark::placeholder {
+  color: rgb(100, 161, 65);
+} */
+
+/* .big-text::before {
+  content: '"$';
+  color: green;
+}
+
+.big-text::after {
+  content: '$"';
+  color: green;
+} */
+/* 
+.big-text::before,
+.big-text::after {
+  content: '$$$';
+  color: yellow;
+  background: black;
+} */
+
+/* .card-dark {
+  background: #b6b6b6;
+}
+
+.item {
+  color: beige;
+}
+
+.item:first-child {
+  color: rgb(214, 106, 34);
+}
+
+.item:last-child {
+  color: rgb(214, 106, 34);
+} */
+
+/* .item:only-child {
+  color: rgb(214, 106, 34);
+} */
+
+/* .item:first-of-type {
+  color: rgb(214, 106, 34);
+}
+
+.item:last-of-type {
+  color: rgb(214, 106, 34);
+}
+
+.item:only-of-type {
+  color: rgb(214, 106, 34);
+} */
+
+/* .chose:nth-child(3) {
+  color: aqua;
+}
+
+li:not(.chose) {
+  color: blueviolet;
+} */
+
+/* тут пишуться важливіші/головніші стилі які будуть мати пріорітет над іншими. */
+/* :root {
+  background: rgb(230, 215, 85);
+}
+
+html {
+  max-width: 720px;
+
+  background: rgb(84, 27, 131);
+}
+
+body {
+  background: #fff;
+}
+
+* {
+  color: #665;
+}
+
+h1 {
+  color: rgb(69, 102, 15);
+}
+
+h1 {
+  color: greenyellow;
+}
+
+.box {
+  background: #c7c7c7;
+}
+
+#user {
+  color: burlywood;
+}
+
+#user_name {
+  color: rgb(110, 180, 139);
+}
+
+a,
+h4,
+h5,
+button {
+  color: lightcoral;
+}
+
+button.button {
+  background: rebeccapurple;
+  color: rgb(0, 255, 0);
+}
+
+a.button {
+  background: rebeccapurple;
+  color: rgb(0, 255, 0);
+}
+
+a#open {
+  background: rgb(153, 51, 99);
+  color: rgb(0, 255, 170);
+}
+
+div > p {
+  color: darkblue;
+}
+
+div p span {
+  color: #fe90ff;
+}
+
+div span.color {
+  color: red;
+}
+
+div span#id_color {
+  color: rgb(72, 255, 0);
+}
+
+h1 + p {
+  color: rgb(221, 158, 158);
+  background: rgb(107, 88, 52);
+}
+
+h1 + p,
+h1 + em {
+  color: rgb(235, 4, 4);
+  background: rgb(218, 146, 15);
+}
+
+h6 ~ p {
+  color: rgb(25, 0, 255);
+  background: #5f0661;
+} */
