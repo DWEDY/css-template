@@ -1,6 +1,11 @@
 .page {
-  background: #fff;
-  padding: 0 15px;
+  /* background-color: rgba(185, 185, 185, 0.233);
+  padding: 0 15px; */
+  /* background-image: url(/img/wallpaper01.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; */
 }
 
 .page_content {
@@ -135,17 +140,23 @@
 .card_block {
   margin-bottom: 24px;
   text-align: center;
+  /* list-style-type: upper-roman; */
+  list-style-position: inside;
+
+  list-style-image: url(img/wallpaper01.png);
+
+  padding: 0;
 }
 
 .card_block:not(:last-of-type) {
   margin-bottom: 24px;
 }
 
-.card_card_description_item {
+.card_description_item {
   font-size: 16px;
   color: #212529;
 
-  display: block;
+  display: list-item;
 }
 
 .card_card_description_item:not(:last-of-type) {
@@ -188,21 +199,46 @@ h1 {
 
 p {
   background: gray;
-  width: 500px;
-  height: 100px;
-  overflow: overlay;
+  /* width: 500px;
+  height: 100px; */
+  /* overflow: overlay; */
   /* text-overflow: ellipsis; */
 }
 
 .hero_text {
-  background: #6c757d;
+  /* background-image: url(/img/wallpaper01.png); */
+  /* background-attachment: fixed;
+  height: 300px;
+  width: 500px; */
+  background-color: transparent;
+  /* background-image: url(/img/wallpaper01.png); */
+  /* border: 12px solid transparent; */
+  padding: 40px;
+  /* color: white; */
+
+  border-image-source: url(/img/wallpaper01.png);
+  border-image-width: 3% 6%;
+  border-image-slice: 3% 6%;
+  /* border-image-outset: 70px; */
+  /* border-image-repeat: space; */
+
+  /* background-origin: border-box; */
+
+  /* background-clip: content-box;
+  -webkit-background-clip: text; */
+
+  /* max-width: 500px;
+  max-height: 300px; */
+  /* overflow: auto; */
+  /* background-repeat: round; */
+  /* background: #6c757d; */
   /* text-align: left; */
-  max-width: 500px;
+  /* max-width: 500px;
   width: 2000px;
   hyphens: manual;
   word-spacing: 10px;
   overflow: auto;
-  resize: both;
+  resize: both; */
   /* white-space: nowrap; */
 }
 
@@ -214,4 +250,42 @@ p {
   overflow: elipsis;
 
   /* white-space: nowrap; */
+}
+
+/* .card_description_item {
+  display: list-item;
+} */
+
+/* .table tr {
+  border: 1px solid rgb(48, 48, 48);
+} */
+
+.table tr td {
+  border: 1px solid rgb(67, 65, 83);
+  border-bottom-color: red;
+  border-right-color: blue;
+}
+
+.table {
+  width: 600px;
+
+  border-collapse: unset;
+  border-spacing: 5px;
+  caption-side: top;
+  /* empty-cells: hide; */
+  table-layout: fixed;
+}
+
+.nav_link::before {
+  content: open-quote;
+}
+
+.nav_link::after {
+  content: close-quote;
+}
+
+.calc {
+  width: 600px;
+  margin: 0;
+  margin-right: calc(50% - (600px / 2));
 }
