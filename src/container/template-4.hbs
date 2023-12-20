@@ -1,0 +1,59 @@
+<header class="header">
+	<div>
+		{{> logo}}
+	</div>
+
+	<nav class="header_nav">
+		{{!-- {{> nav list=header isVertical=true}} --}}
+		{{!-- Шаблонізатор посилається(>) до (nav компонента), який той вже має {{#each list}} ("list" (можна будь-яке
+		слово)), а вже тут в контейнері шаблонізатор каже що (list дорівнює header), тобто header з
+		енд-поінта!
+		--}}
+		<div class="header_nav_right">
+			{{> nav list=header}}
+		</div>
+	</nav>
+</header>
+
+{{#with main}}
+<div class="main">
+	<div class="main_content">
+		<h1 class="main_heading">{{heading}}</h1>
+		<div class="main_description">{{description}}
+			<div class="main_action">
+				<a class="button" href="{{href}}">{{button}}</a>
+			</div>
+		</div>
+	</div>
+	<img src="{{image}}" alt="Main image" class="main_image">
+</div>
+{{/with}}
+
+<div class="featured">
+	{{#each featured}}
+	{{> cardFeatured data=this}}
+	{{/each}}
+</div>
+
+<div class="card_actions">
+	{{#each actions}}
+	<div class="actions">
+		<h3 class="actions_heading">{{heading}}</h3>
+		<a href="{{url}}" class="actions_button">{{text}}</a>
+	</div>
+	{{/each}}
+</div>
+
+<footer class="footer">
+	<div>
+		{{> logo}}
+		<span class="footer_copyright">Copyright 2023-2024</span>
+	</div>
+
+	{{#each footer}}
+	<div>
+		<span class="footer_title">{{title}}</span>
+		{{> nav list=links isVertical=true}}
+	</div>
+	{{/each}}
+</footer>
