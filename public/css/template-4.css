@@ -1,0 +1,323 @@
+:root {
+  --space-s: 4px;
+  --space-m: 12px;
+  --space-xm: 16px;
+  --space-l: 24px;
+  --space-b: 36px;
+  --space-xb: 80px;
+
+  --size-s: 14px;
+  --size-d: 16px;
+  --size-l: 20px;
+
+  --color-border: #dee2e6;
+  --color-primary: #006be6;
+  --color-white: #fff;
+  --color-title: #212529;
+  --color-text: #343a40;
+  --color-main: #5a5a5a;
+
+  --border-radius: 12px;
+
+  --weight-title: 500;
+  --weight-text: 400;
+
+  --font-family: Roboto;
+
+  /* можна писати будь-які свої значення наприклад --space-1, або --name-f і тому подібне... */
+}
+
+/* ========================================================== */
+.page {
+  background: var(--color-white);
+  padding: 0 15px;
+
+  display: flex;
+  /*відцентровує контент по центру екрану*/
+  justify-content: center;
+}
+
+.page_content {
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  /* margin: 0 auto; */
+  /* Де 0 відповілає за вертикальні відступи, а auto відповідає за горизонтальні. */
+}
+/* ========================================================== */
+
+.header {
+  padding: var(--space-l) 0;
+  border-bottom: 1px solid var(--color-border);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 17px;
+  color: var(--color-white);
+  background: var(--color-primary);
+
+  width: var(--space-l);
+  height: var(--space-l);
+
+  border-radius: calc(var(--border-radius) / 2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav_inline {
+  gap: var(--space-xm);
+}
+
+.nav_vertical {
+  gap: var(--space-m);
+  flex-direction: column;
+}
+
+.nav_link {
+  color: var(--color-text);
+  font-size: var(--size-d);
+  text-decoration: none;
+
+  line-height: 100%;
+}
+
+.nav_link:hover {
+  text-decoration: underline;
+  color: var(--color-primary);
+}
+
+.page_block:not(:last-child) {
+  margin-bottom: 80px;
+}
+
+.footer {
+  padding: var(--space-l) 0;
+
+  border-top: 1px solid var(--color-border);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_copyright {
+  font-size: var(--size-s);
+  color: var(--color-text);
+
+  display: block;
+  margin-top: var(--space-l);
+}
+
+.footer_title {
+  font-size: var(--size-l);
+  color: var(--color-title);
+
+  display: block;
+  margin-bottom: var(--space-l);
+  font-weight: var(--weight-title);
+}
+/* ///////////////позиціювання контенту//////////////////////////// */
+.main {
+  flex-direction: row-reverse;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xb);
+
+  font-family: var(--font-family);
+}
+
+.main_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.main_image {
+  width: 500px;
+  height: 500px;
+  border-radius: var(--border-radius);
+}
+
+.main_heading {
+  color: var(--color-main);
+  font-size: var(--space-b);
+
+  font-weight: var(--weight-title);
+  line-height: 120%;
+}
+
+.main_description {
+  color: var(--color-main);
+  font-size: var(--size-d);
+
+  font-weight: var(--weight-text);
+  line-height: 170%;
+}
+
+.main_action {
+  display: flex;
+  justify-content: baseline;
+
+  margin-top: var(--space-l);
+}
+
+.button,
+.actions_button {
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: var(--space-xm);
+
+  border-radius: 4px;
+  /* border: 1px solid #6c757d; */
+  background: #6c757d;
+
+  padding: var(--space-s) var(--space-xm);
+}
+
+.button:hover {
+  background: #838e98;
+}
+
+/* \\\\\\\\\\\\\\\////////////// */
+
+.featured {
+  display: flex;
+  font-family: var(--font-family);
+}
+
+.card_featured {
+  padding: 0 var(--space-b);
+
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  text-align: justify;
+  gap: var(--space-l);
+
+  flex: 1;
+}
+
+.featured_photo {
+  display: flex;
+  border-radius: 15%;
+}
+
+.featured_heading {
+  color: #212529;
+  font-size: var(--space-b);
+
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.featured_info {
+  color: #212529;
+  font-size: 16px;
+
+  font-weight: 400;
+  line-height: 170%;
+
+  height: 60%;
+}
+
+.featured_link {
+  display: flex;
+
+  color: #0d6efd;
+
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.featured_link:hover {
+  color: #5f9fff;
+}
+
+/* \\\\\\\\\\\\\\\\/////////////// */
+
+.card_actions {
+  font-family: var(--font-family);
+
+  border-radius: var(--space-m);
+  background: #563d7c;
+
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-l);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 0 var(--size-l);
+
+  max-width: 30%;
+}
+
+.actions_heading {
+  color: var(--color-white);
+  font-size: var(--size-l);
+  font-weight: 400;
+  line-height: 16px;
+  padding-bottom: var(--space-l);
+}
+
+.actions_button {
+  background: var(--color-white);
+  color: var(--color-title);
+
+  padding: var(--space-xm) var(--space-xb);
+}
+
+.actions_button:hover {
+  background: #dedae1;
+}
+
+/* .form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--color-primary);
+  padding: var(--space-l);
+  border-radius: var(--border-radius);
+}
+
+.form_content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.form_title {
+  font-size: 27px;
+  font-weight: var(--weight-title);
+  color: var(--color-white);
+}
+
+.form_info {
+  font-size: var(--size-d);
+  font-weight: var (--weight-text);
+  color: var(--color-white);
+}
+
+.form_button {
+  background-color: var(--color-white);
+  width: 100%;
+  max-width: 160px;
+  color: var(--color-text);
+} */
