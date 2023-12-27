@@ -1,3 +1,32 @@
+@keyframes fly {
+  from {
+    top: 0;
+    left: 0;
+
+    background: blue;
+  }
+
+  25% {
+    top: 500px;
+    left: 500px;
+
+    background: yellow;
+  }
+
+  50% {
+    left: 0;
+
+    background: purple;
+  }
+
+  to {
+    top: 0;
+    left: 0;
+
+    background: red;
+  }
+}
+
 :root {
   --space-m: 12px;
   --space-xm: 16px;
@@ -19,6 +48,8 @@
   --weight-title: 500;
   --weight-text: 400;
 
+  --page-width: 960px;
+
   /* можна писати будь-які свої значення наприклад --space-1, або --name-f і тому подібне... */
 }
 
@@ -33,11 +64,13 @@
 }
 
 .page_content {
-  max-width: 960px;
+  max-width: var(--page-width);
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 80px;
+
+  padding-top: 74px;
   /* margin: 0 auto; */
   /* Де 0 відповілає за вертикальні відступи, а auto відповідає за горизонтальні. */
 }
@@ -49,6 +82,17 @@
 
   display: flex;
   justify-content: space-between;
+
+  position: fixed;
+
+  width: var(--page-width);
+
+  top: 0;
+  /* left: calc(50% - (var(--page-width) / 2)); */
+
+  background-color: var(--color-white);
+
+  z-index: 1;
 }
 
 .logo {
@@ -85,6 +129,9 @@
   text-decoration: none;
 
   line-height: 100%;
+
+  transition-property: color;
+  transition-duration: 0.8s;
 }
 
 .nav_link:hover {
@@ -191,12 +238,20 @@
   color: var(--color-text);
 }
 
+/* ///////////////ПРИКЛАД АНІМАЦІЇ\\\\\\\\\\\\\\\ */
 .button {
+  user-select: none;
+
   display: inline-block;
   font-size: var(--size-d);
   text-decoration: none;
   padding: var(--space-m) var(--space-xm);
   border-radius: var(--border-radius);
+
+  /* transition: opacity 0.5s, background-color 0.5s; */
+
+  transition-property: opacity, background-color;
+  transition-duration: 0.5s;
 }
 
 .card_button {
@@ -206,7 +261,10 @@
 
 .button:hover {
   opacity: 0.7;
+  background-color: rgb(181, 181, 0);
+  color: chocolate;
 }
+/* ///////////////ПРИКЛАД АНІМАЦІЇ\\\\\\\\\\\\\\\ */
 
 .form {
   display: flex;
@@ -237,8 +295,89 @@
 }
 
 .form_button {
+  user-select: none;
+
   background-color: var(--color-white);
   width: 100%;
   max-width: 160px;
   color: var(--color-text);
+}
+
+.hero_slider_icon {
+  background: var(--color-primary);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: var(--border-radius);
+  color: var(--color-white);
+
+  position: absolute;
+
+  top: calc(50% - 15px);
+}
+
+.hero_slider_icon:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.hero_slider {
+  position: relative;
+}
+
+.hero_slider_left {
+  left: var(--space-l);
+}
+
+.hero_slider_right {
+  right: var(--space-l);
+}
+
+.modal {
+  position: fixed;
+  top: 200px;
+  left: 200px;
+
+  /* height: 150px; */
+  width: 600px;
+  background: black;
+  color: #fff;
+
+  padding: 24px;
+
+  border-radius: 24px;
+  line-height: 150%;
+  z-index: 2;
+  /* 
+  transition-property: top;
+  transition-duration: 3s;
+  -o-transition-timing-function: cubic-bezier(
+    -0.6,
+    -0.04,
+    0.98,
+    0.335
+  );
+  transition-delay: 3s; */
+}
+
+.modal {
+  animation-name: fly;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(
+    0.92,
+    0,
+    0.91,
+    0.66
+  );
+
+  animation-delay: 3s;
+
+  animation-iteration-count: infinite;
+}
+
+.hero {
+  user-select: none;
 }

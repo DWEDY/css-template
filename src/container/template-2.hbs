@@ -1,11 +1,11 @@
 <div class="page">
 	<div class="page_content">
 		<header class="page_block">
-			<div class="header row g-0">
-				<div class="col-3">
+			<div class="header">
+				<div class="">
 					{{> logo}}
 				</div>
-				<nav class="header_nav col-9 header_nav_right">
+				<nav class="header_nav">
 					{{!-- {{> nav list=header isVertical=true}} --}}
 					{{!-- Шаблонізатор посилається(>) до (nav компонента), який той вже має {{#each list}} ("list"
 					(можна
@@ -37,9 +37,10 @@
 		--}}
 
 		<section class="page_block">
-			<div class="row g-4">
+			{{!-- Гнучка система позиціювання {flex-container} --}}
+			<div class="flex-container">
 				{{#each preview}}
-				<div class="col-6">
+				<div class="flex-item">
 					{{> cardPreview data=this}}
 				</div>
 				{{/each}}
@@ -51,16 +52,14 @@
 				<div class="row g-0">
 					<div class="col-12">
 						<div class="list_header">
-							<div class="row g-0">
-								<div class="col-6">
-									<h2 class="list_title">List of posts</h2>
-								</div>
-								<div class="col-6">
-									<div class="category_list">
-										{{#each categories}}
-										<button class="category_button">{{text}}</button>
-										{{/each}}
-									</div>
+							<div class="col-6">
+								<h2 class="list_title">List of posts</h2>
+							</div>
+							<div>
+								<div class="category_list">
+									{{#each categories}}
+									<button class="category_button">{{text}}</button>
+									{{/each}}
 								</div>
 							</div>
 						</div>
@@ -92,8 +91,8 @@
 
 		<footer class="page_block">
 			{{> divider}}
-			<div class="row g-0 footer">
-				<div class="col-3">
+			<div class="footer">
+				<div>
 					{{> logo}}
 					<span class="footer_copyright">Copyright 2023-2024</span>
 				</div>

@@ -15,13 +15,26 @@
 	</nav>
 </header>
 
+
+<div class="modal">
+	{{hero.text}} {{hero.text}}
+	<div class="modal_text">{{hero.text}} {{hero.text}}</div>
+</div>
+
+
 {{#with hero}}
 <div class="hero">
 	<div class="hero_content">
 		<h1 class="hero_title">{{title}}</h1>
 		<p class="hero_text">{{text}}</p>
 	</div>
-	<img src="{{photo}}" alt="Hero image" class="hero_image">
+
+	<div class="hero_slider">
+		<div class="hero_slider_icon hero_slider_left">{{left}}</div>
+		<img src="{{photo}}" alt="Hero image" class="hero_image">
+		<div class="hero_slider_icon hero_slider_right">{{right}}</div>
+	</div>
+
 	{{!-- в alt ставиться опис картинки, для пошукових систем, та для пристроїв які читають картинку або, якщо картинка
 	не завантажилася і користувач зміг зрозуміти що це за картинка --}}
 </div>
