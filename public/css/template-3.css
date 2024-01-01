@@ -1,3 +1,25 @@
+@import url(/css/var.css);
+
+@font-face {
+  font-family: 'Segment';
+  src: url(/font/Segment-Regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Segment';
+  src: url(/font/Segment-SemiBold.otf);
+  font-weight: 600;
+}
+
+@layer normalize, main,component, style;
+
+@layer style {
+  .card_button {
+    background: red;
+  }
+}
+
 @keyframes fly {
   from {
     top: 0;
@@ -25,32 +47,6 @@
 
     background: red;
   }
-}
-
-:root {
-  --space-m: 12px;
-  --space-xm: 16px;
-  --space-l: 24px;
-  --space-b: 36px;
-
-  --size-s: 14px;
-  --size-d: 16px;
-  --size-l: 20px;
-
-  --color-border: #dee2e6;
-  --color-primary: #006be6;
-  --color-white: #fff;
-  --color-title: #212529;
-  --color-text: #343a40;
-
-  --border-radius: 12px;
-
-  --weight-title: 500;
-  --weight-text: 400;
-
-  --page-width: 960px;
-
-  /* можна писати будь-які свої значення наприклад --space-1, або --name-f і тому подібне... */
 }
 
 /* ========================================================== */
@@ -239,31 +235,34 @@
 }
 
 /* ///////////////ПРИКЛАД АНІМАЦІЇ\\\\\\\\\\\\\\\ */
-.button {
-  user-select: none;
+@layer main {
+  .button {
+    user-select: none;
 
-  display: inline-block;
-  font-size: var(--size-d);
-  text-decoration: none;
-  padding: var(--space-m) var(--space-xm);
-  border-radius: var(--border-radius);
+    display: inline-block;
+    font-size: var(--size-d);
+    text-decoration: none;
+    padding: var(--space-m) var(--space-xm);
+    border-radius: var(--border-radius);
 
-  /* transition: opacity 0.5s, background-color 0.5s; */
+    transition-property: opacity, background-color;
+    transition-duration: 0.5s;
+  }
 
-  transition-property: opacity, background-color;
-  transition-duration: 0.5s;
+  .button:hover {
+    opacity: 0.7;
+    background-color: rgb(181, 181, 0);
+    color: chocolate;
+  }
 }
 
-.card_button {
-  color: var(--color-white);
-  background-color: var(--color-primary);
+@layer component {
+  .card_button {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
 }
 
-.button:hover {
-  opacity: 0.7;
-  background-color: rgb(181, 181, 0);
-  color: chocolate;
-}
 /* ///////////////ПРИКЛАД АНІМАЦІЇ\\\\\\\\\\\\\\\ */
 
 .form {
@@ -336,12 +335,12 @@
   right: var(--space-l);
 }
 
-.modal {
+/* .modal {
   position: fixed;
   top: 200px;
   left: 200px;
 
-  /* height: 150px; */
+  height: 150px;
   width: 600px;
   background: black;
   color: #fff;
@@ -351,7 +350,7 @@
   border-radius: 24px;
   line-height: 150%;
   z-index: 2;
-  /* 
+
   transition-property: top;
   transition-duration: 3s;
   -o-transition-timing-function: cubic-bezier(
@@ -360,10 +359,10 @@
     0.98,
     0.335
   );
-  transition-delay: 3s; */
-}
+  transition-delay: 3s;
+} */
 
-.modal {
+/* .modal {
   animation-name: fly;
   animation-duration: 2s;
   animation-timing-function: cubic-bezier(
@@ -371,13 +370,99 @@
     0,
     0.91,
     0.66
-  );
-
-  animation-delay: 3s;
-
-  animation-iteration-count: infinite;
-}
+  ); */
 
 .hero {
   user-select: none;
+}
+/* /////////////////////////////Правила та одиниці вимірювання\\\\\\\\\\\\\\\\\\ */
+/* @media all and (max-width: 800px) {
+  .blog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+
+/* @media not all and (min-width: 601px) and (max-width: 800px) {
+  .blog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+
+/* @media all and (max-width: 800px) {
+  .page_content {
+    background: #006be6;
+  }
+} */
+
+.blog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media all and (width <= 600px) {
+  .blog {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (600px < width <= 800px) {
+  .blog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form {
+  gap: var(--space-l);
+}
+
+@media all and (width <= 650px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .form_info {
+    max-width: 300px;
+    width: 100%;
+    line-height: 150%;
+  }
+
+  .form_content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.hero_container {
+  container-type: inline-size;
+  container-name: hero;
+}
+
+@container hero (width < 960px) {
+  .hero {
+    flex-direction: column;
+  }
+}
+
+.ex {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-left: 2ex;
+
+  line-height: 1.5em;
+}
+
+/* .test {
+  position: absolute;
+  background: red;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vh;
+} */
+
+.hero_title {
+  font-size: 5cqw;
 }
