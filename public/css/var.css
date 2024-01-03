@@ -33,27 +33,44 @@
 } */
 
 :root {
+  --space-xs: 4px;
+  --space-s: 8px;
   --space-m: 12px;
   --space-xm: 16px;
   --space-l: 24px;
   --space-b: 36px;
+  --space-xb: 80px;
 
+  --size-xs: 10px;
   --size-s: 14px;
   --size-d: 16px;
   --size-l: 20px;
+  --size-b: 24px;
+  --size-xb: 32px;
 
   --color-border: #dee2e6;
+  --color-border_dark: #253041;
+  --color-border-light: #d3dee9;
   --color-primary: #006be6;
   --color-white: #fff;
   --color-title: #212529;
   --color-text: #343a40;
+  --color-text-2: #6c757d;
+  --color-text-3: #9ca3af;
+  --color-main: #767676;
+  --color-purple: #885ffb;
+  --background-dark: #172136;
 
   --border-radius: 12px;
 
-  --weight-title: 500;
+  --weight-title: 600;
   --weight-text: 400;
+  --font-weight: 700;
 
-  --page-width: 960px;
+  --font-family: Roboto;
+  --font-family1: Inter;
 
-  /* можна писати будь-які свої значення наприклад --space-1, або --name-f і тому подібне... */
+  --page-widht: 1150px;
 }
+
+/* можна писати будь-які свої значення наприклад --space-1, або --name-f і тому подібне... */
