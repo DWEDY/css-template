@@ -1,0 +1,18 @@
+<div class="heroDark_block">
+	{{#with hero}}
+	<h1 class="heroTitle">{{title}}</h1>
+	<p class="heroDescription">{{description}}</p>
+	{{#with button}}
+	<button class="heroButton" href="{{url}}">{{text}}</button>
+	{{/with}}
+	{{/with}}
+</div>
+<div class="aboutDark_block">
+	{{#with about}}
+	<h2 class="aboutHead">{{heading}}</h2>
+	<p class="aboutInfo">{{info}}</p>
+	{{/with}}
+</div>
+<h3 class="articlTitle">Our Articles</h3>
+
+<div class="artCardDark_list">{{> articleCardDark}}</div>
