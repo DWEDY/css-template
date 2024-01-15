@@ -67,6 +67,41 @@
 }
 
 @layer variant {
+  .iconSL {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .sl_Btn {
+    height: var(--size-3a);
+    width: var(--size-5);
+    background-image: url('/svg/sl_btn.svg');
+  }
+
+  .slBtn_link {
+    justify-self: flex-end;
+  }
+
+  .SLclick {
+    transition-property: opacity background-color;
+    transition-duration: var(--tran_duration-04);
+    padding: 12px 18px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+  }
+
+  .SLclick:hover {
+    opacity: var(--opacity-1);
+    cursor: pointer;
+    background-color: #88bfe8;
+    border: 1px solid var(--color-black);
+  }
+
+  .SLclick:active {
+    opacity: var(--opacity-2);
+  }
+
   .button_primary {
     color: var(--color-white);
     background-color: var(--color-primary);
@@ -109,6 +144,7 @@ body {
   --color-black: #000;
   --color-primary: #611f69;
   --color-light: #f4ede4;
+  --color-cold: #1264a3;
 
   --page-width-big: 1260px;
   --page-width-medium: 1000px;
@@ -127,6 +163,9 @@ body {
   --size-7: 32px;
   --size-8: 36px;
   --size-9: 38px;
+  --size-10: 40px;
+
+  --weight-1: 700;
 
   --opacity-1: 0.7;
   --opacity-2: 0.3;
@@ -142,15 +181,17 @@ body {
     display: grid;
   }
 
-  .card3_title {
+  .cardsSl_title {
     display: flex;
     flex-direction: column;
     align-items: center;
 
     font-size: var(--size-7);
-    font-weight: 700;
+    font-weight: var(--weight-1);
     line-height: var(--size-9);
     letter-spacing: -0.3px;
+
+    margin-bottom: var(--size-10);
   }
 
   .cardSl_container {
@@ -158,6 +199,54 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 80px;
+  }
+
+  .cardSl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 280px;
+    min-height: 445px;
+    gap: var(--size-1);
+
+    box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .cardSl_head {
+    color: #454245;
+    font-size: var(--size-3a);
+    font-weight: var(--weight-1);
+    line-height: var(--size-3b);
+    letter-spacing: 0.1px;
+    padding-left: var(--size-2);
+  }
+
+  .cardSl_description {
+    font-size: var(--size-5);
+    font-weight: var(--weight-1);
+    line-height: 150%;
+    padding-left: var(--size-2);
+  }
+
+  .cardSlBtn_block {
+    display: flex;
+    flex-direction: row;
+    gap: 145px;
+    width: 280px;
+
+    position: absolute;
+    top: 3200px;
+    padding-left: var(--size-2);
+  }
+
+  .cardSl_btn {
+    color: var(--color-cold);
+    font-size: var(--size-3a);
+    font-weight: var(--weight-1);
+    line-height: 15px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
   }
 
   .imageSl {
@@ -193,7 +282,7 @@ body {
 
   .info_quote {
     font-size: var(--size-6);
-    font-weight: 700;
+    font-weight: var(--weight-1);
     line-height: 150%;
     letter-spacing: -0.3px;
     width: 100%;
@@ -378,11 +467,57 @@ body {
   }
 
   @media all and (width < 1000px) {
+    .cardsSl_title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      font-size: var(--size-7);
+      font-weight: var(--weight-1);
+      line-height: var(--size-8);
+      letter-spacing: -0.5px;
+      margin-bottom: var(--size-10);
+    }
+
+    /* ..................................... */
+
+    .cardSl_container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 80px;
+      width: 82%;
+    }
+
+    .cardSl {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 280px;
+      min-height: 445px;
+      gap: var(--size-1);
+
+      box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .cardSlBtn_block {
+      display: flex;
+      flex-direction: row;
+      gap: 145px;
+      width: 280px;
+
+      position: absolute;
+      top: 3710px;
+      padding-left: var(--size-2);
+    }
+
     .page_content2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
       padding: 50px 0 0;
-      max-width: 0;
-      min-width: 0;
+      width: var(--page-width-small);
     }
 
     .quote_section2 {
@@ -454,6 +589,50 @@ body {
   }
 
   @media all and (width < 600px) {
+    .cardsSl_title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      font-size: var(--size-7);
+      font-weight: var(--weight-1);
+      line-height: var(--size-8);
+      letter-spacing: -0.5px;
+      margin-bottom: var(--size-10);
+    }
+
+    /* ..................................... */
+
+    .cardSl_container {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 80px;
+      width: 82%;
+      flex: content;
+    }
+
+    .cardSl {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 280px;
+      min-height: 445px;
+      gap: var(--size-1);
+
+      box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .cardSlBtn_block {
+      display: flex;
+      flex-direction: row;
+      gap: 145px;
+      width: 280px;
+
+      position: absolute;
+      top: 3880px;
+      padding-left: var(--size-2);
+    }
+
     .page_content2 {
       width: 100%;
       padding: 25px 0 0;
